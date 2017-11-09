@@ -1,0 +1,34 @@
+
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <h1>Companies</h1>
+        <div class="well"> 
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+             <tbody>
+                        <% @companies.each do |c| %>
+                          <tr>
+                            <td><%= link_to c.name, company_path(c) %></td>
+                            <td><%= c.employees.count %></td>
+                            <td><%= link_to 'Edit', edit_company_path(c), class: 'btn btn-warning' %></td>
+                            <td><%= link_to 'Destroy', c, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+          </table>
+       </div> 
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+
+      </div>  
+  </div>    
+</div>
