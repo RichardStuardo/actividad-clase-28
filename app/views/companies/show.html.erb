@@ -21,7 +21,7 @@
 						<%= form.text_field :email %>
 
 						<%= form.label "Ingresa el apellido"%>
-						<%= form.select :area_id, @area.collect{ |a| [a.name, a.id]}, prompt:' Elige' %>
+						<%= form.select :area_id, Area.pluck(:name, :id) , prompt:' Elige' %>
 
 						<%= form.submit "Agregar"  %>
 
